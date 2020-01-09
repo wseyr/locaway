@@ -26,8 +26,7 @@ public class CustomPriceDay {
 	private Date date;
 	
 	@ManyToOne
-	@JoinTable(joinColumns = @JoinColumn(name = "CustomPriceDayId"), inverseJoinColumns = @JoinColumn(name = "accomodation_id"))
-	private List<Accomodation> accomodations = new ArrayList<Accomodation>();
+	private Accomodation accomodation;
 	
 	
 	public CustomPriceDay() {
