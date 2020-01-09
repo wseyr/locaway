@@ -15,13 +15,13 @@ class LocAwayApplicationTestsData {
 
 	@Test
 	void one() {
-		ClassPathXmlApplicationContext spring = new ClassPathXmlApplicationContext("application-context.xml");
+		ClassPathXmlApplicationContext spring = new ClassPathXmlApplicationContext("application.properties");
 
 		IOptionRepository optionRepo = spring.getBean(IOptionRepository.class);
 
-		Option djamil = new Option();
+		Option fireplace = new Option("Cheminée", false);
 
-		optionRepo.save(djamil);
+		optionRepo.save(fireplace);
 
 		spring.close();
 	}
