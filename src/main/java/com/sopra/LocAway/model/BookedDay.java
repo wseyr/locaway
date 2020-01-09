@@ -1,12 +1,48 @@
 package com.sopra.LocAway.model;
 
 import java.util.Date;
-import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class BookedDay {
+	@Id
+	@GeneratedValue
 	Long id;
 	private Date date;
-	
-	private List<Booking> bookings;
-	
+
+	@ManyToOne
+	private Booking booking;
+
+	public BookedDay() {
+		super();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public Booking getBooking() {
+		return booking;
+	}
+
+	public void setBooking(Booking booking) {
+		this.booking = booking;
+	}
+
 }
