@@ -1,13 +1,21 @@
 package com.sopra.LocAway.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class PointOfInterest {
+	
+	@ManyToMany
+	@JoinTable
+	private List<Accomodation> accomodations; 
 	
 	@Id
 	@GeneratedValue
