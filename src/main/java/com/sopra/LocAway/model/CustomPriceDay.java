@@ -1,15 +1,17 @@
 package com.sopra.LocAway.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 
 @Entity
-public class CustomPrice {
+public class CustomPriceDay {
 	
 	@Id
 	@GeneratedValue
@@ -18,11 +20,14 @@ public class CustomPrice {
 	private Float personPrice;
 	private Date date;
 	
-	public CustomPrice() {
+	@OneToMany(mappedBy="accomodations") 
+	private List<Accomodation> accomodations;
+	
+	public CustomPriceDay() {
 		super();
 	}
 
-	public CustomPrice(Float basePrice, Float personPrice, Date date) {
+	public CustomPriceDay(Float basePrice, Float personPrice, Date date) {
 		super();
 		this.basePrice = basePrice;
 		this.personPrice = personPrice;
@@ -63,7 +68,7 @@ public class CustomPrice {
 
 	@Override
 	public String toString() {
-		return "CustomPrice [id=" + id + ", basePrice=" + basePrice + ", personPrice=" + personPrice + ", date=" + date
+		return "CustomPriceDay [id=" + id + ", basePrice=" + basePrice + ", personPrice=" + personPrice + ", date=" + date
 				+ "]";
 	}
 	
