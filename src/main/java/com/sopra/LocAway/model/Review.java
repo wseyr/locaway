@@ -16,16 +16,21 @@ public class Review {
 	private int grade;
 
 	@ManyToOne
+	private Accomodation accomodation;
+
+	@ManyToOne
 	private User user;
 
 	public Review() {
 		super();
 	}
 
-	public Review(String text, int grade) {
+	public Review(String text, int grade, Accomodation accomodation, User user) {
 		super();
 		this.text = text;
 		this.grade = grade;
+		this.accomodation = accomodation;
+		this.user = user;
 	}
 
 	public String getText() {
@@ -58,6 +63,14 @@ public class Review {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Accomodation getAccomodation() {
+		return accomodation;
+	}
+
+	public void setAccomodation(Accomodation accomodation) {
+		this.accomodation = accomodation;
 	}
 
 }

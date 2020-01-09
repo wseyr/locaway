@@ -12,8 +12,16 @@ public class Bookmark {
 	private Long id;
 	@ManyToOne
 	private User user;
+	@ManyToOne
+	private Accomodation accomodation;
 
 	public Bookmark() {
+	}
+
+	public Bookmark(User user, Accomodation accomodation) {
+		super();
+		this.user = user;
+		this.accomodation = accomodation;
 	}
 
 	public Long getId() {
@@ -30,6 +38,14 @@ public class Bookmark {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Accomodation getAccomodation() {
+		return accomodation;
+	}
+
+	public void setAccomodation(Accomodation accomodation) {
+		this.accomodation = accomodation;
 	}
 
 }

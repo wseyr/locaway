@@ -27,12 +27,18 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private List<Bookmark> bookmarks = new ArrayList<Bookmark>();
 
+	@OneToMany(mappedBy = "user")
+	private List<Booking> bookings = new ArrayList<Booking>();
+
+	@OneToMany(mappedBy = "user")
+	private List<Accomodation> accomodations = new ArrayList<Accomodation>();
+
 	public User() {
 		super();
 	}
 
 	public User(boolean isAdmin, String email, String password, String phoneNumber, String firstName, String lastName,
-			List<Review> reviews, List<Bookmark> bookmarks) {
+			List<Review> reviews, List<Bookmark> bookmarks, List<Booking> bookings, List<Accomodation> accomodations) {
 		super();
 		this.isAdmin = isAdmin;
 		this.email = email;
@@ -42,6 +48,8 @@ public class User {
 		this.lastName = lastName;
 		this.reviews = reviews;
 		this.bookmarks = bookmarks;
+		this.bookings = bookings;
+		this.accomodations = accomodations;
 	}
 
 	public List<Review> getReviews() {
@@ -114,6 +122,22 @@ public class User {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public List<Booking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
+	}
+
+	public List<Accomodation> getAccomodations() {
+		return accomodations;
+	}
+
+	public void setAccomodations(List<Accomodation> accomodations) {
+		this.accomodations = accomodations;
 	}
 
 }
