@@ -6,21 +6,20 @@ public class User {
 	private String password;
 	private String phoneNumber;
 	private String firstName;
-	private String lasttName;
+	private String lastName;
 
 	public User() {
 		super();
 	}
 
-	public User(boolean isAdmin, String email, String password, String phoneNumber, String firstName,
-			String lasttName) {
+	public User(boolean isAdmin, String email, String password, String phoneNumber, String firstName, String lastName) {
 		super();
 		this.isAdmin = isAdmin;
 		this.email = email;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
 		this.firstName = firstName;
-		this.lasttName = lasttName;
+		this.lastName = lastName;
 	}
 
 	public boolean isAdmin() {
@@ -63,12 +62,12 @@ public class User {
 		this.firstName = firstName;
 	}
 
-	public String getLasttName() {
-		return lasttName;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLasttName(String lasttName) {
-		this.lasttName = lasttName;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 }
