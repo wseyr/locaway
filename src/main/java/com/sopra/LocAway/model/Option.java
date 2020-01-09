@@ -53,7 +53,6 @@ public class Option {
 	public String toString() {
 		return "Option [id=" + id + ", name=" + name + ", isRule=" + isRule + "]";
 	}
-
-
 	
-	}
+}
+
