@@ -1,10 +1,12 @@
 package com.sopra.LocAway.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Option {
@@ -13,6 +15,9 @@ public class Option {
 	private Long id;
 	private String name;
 	private Boolean isRule;
+	
+	@ManyToMany
+	List<Accomodation> accomodations;
 	
 	public Option() {
 		super();
