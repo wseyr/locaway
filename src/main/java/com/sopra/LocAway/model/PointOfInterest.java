@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
 
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
@@ -12,11 +11,11 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class PointOfInterest {
-	
+
 	@ManyToMany
 	@JoinTable
-	private List<Accomodation> accomodations; 
-	
+	private List<Accomodation> accomodations;
+
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -25,20 +24,21 @@ public class PointOfInterest {
 	private String number;
 	private String street;
 	private String city;
+	private String postcode;
 	private String country;
-	
+	private Float latitudeDeg;
+	private Float longitudeDeg;
+
 	public PointOfInterest() {
 		super();
 	}
 
-	public PointOfInterest(String name, String description, String number, String street, String city, String country) {
-		super();
-		this.name = name;
-		this.description = description;
-		this.number = number;
-		this.street = street;
-		this.city = city;
-		this.country = country;
+	public List<Accomodation> getAccomodations() {
+		return accomodations;
+	}
+
+	public void setAccomodations(List<Accomodation> accomodations) {
+		this.accomodations = accomodations;
 	}
 
 	public Long getId() {
@@ -89,6 +89,14 @@ public class PointOfInterest {
 		this.city = city;
 	}
 
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
 	public String getCountry() {
 		return country;
 	}
@@ -97,14 +105,26 @@ public class PointOfInterest {
 		this.country = country;
 	}
 
+	public Float getLatitudeDeg() {
+		return latitudeDeg;
+	}
+
+	public void setLatitudeDeg(Float latitudeDeg) {
+		this.latitudeDeg = latitudeDeg;
+	}
+
+	public Float getLongitudeDeg() {
+		return longitudeDeg;
+	}
+
+	public void setLongitudeDeg(Float longitudeDeg) {
+		this.longitudeDeg = longitudeDeg;
+	}
+
 	@Override
 	public String toString() {
 		return "PointOfInterest [id=" + id + ", name=" + name + ", description=" + description + ", number=" + number
 				+ ", street=" + street + ", city=" + city + ", country=" + country + "]";
 	}
-	
-	
-	
-	
-	
-	}
+
+}
