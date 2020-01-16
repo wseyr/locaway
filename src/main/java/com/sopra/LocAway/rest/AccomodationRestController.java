@@ -14,26 +14,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sopra.LocAway.exception.NotFoundException;
-import com.sopra.LocAway.model.User;
-import com.sopra.LocAway.repository.IUserRepository;
+import com.sopra.LocAway.model.Accomodation;
+import com.sopra.LocAway.repository.IAccomodationRepository;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/accomodation")
 public class AccomodationRestController {
 
 	@Autowired
-	private IUserRepository userRepo;
+	private IAccomodationRepository accomodationRepo;
 	
 	@GetMapping("")
-	public List<User> list() {
-		List<User> users = userRepo.findAll();
+	public List<Accomodation> list() {
+		List<Accomodation> accomodations = accomodationRepo.findAll();
 
-		return users;
+		return accomodations;
 	}
 
 	@GetMapping("/{id}")
-	public User find(@PathVariable Long id) {
-		Optional<User> opt = userRepo.findById(id);
+	public Accomodation find(@PathVariable Long id) {
+		Optional<Accomodation> opt = accomodationRepo.findById(id);
 
 		if (opt.isPresent()) {
 			return opt.get();
@@ -43,22 +43,22 @@ public class AccomodationRestController {
 	}
 
 	@PostMapping("")
-	public User create(@RequestBody User user) {
-		user = userRepo.save(user);
+	public Accomodation create(@RequestBody Accomodation accomodation) {
+		accomodation = accomodationRepo.save(accomodation);
 
-		return user;
+		return accomodation;
 	}
 
 	@PutMapping("/{id}")
-	public User update(@RequestBody User user, @PathVariable Long id) {
-		user = userRepo.save(user);
+	public Accomodation update(@RequestBody Accomodation accomodation, @PathVariable Long id) {
+		accomodation = accomodationRepo.save(accomodation);
 
-		return user;
+		return accomodation;
 	}
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
-		userRepo.deleteById(id);
+		accomodationRepo.deleteById(id);
 	}
 
 }	
