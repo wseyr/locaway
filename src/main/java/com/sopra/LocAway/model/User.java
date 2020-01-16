@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 @Entity
 @Table(name="AppUser")
@@ -15,6 +16,8 @@ public class User {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 
 	private boolean isAdmin;
 	private String email;

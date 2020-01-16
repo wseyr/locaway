@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 @Entity
 public class Review {
@@ -11,7 +12,8 @@ public class Review {
 	@Id
 	@GeneratedValue
 	private Long id;
-
+	@Version
+	private int version;
 	private String text;
 	private int grade;
 

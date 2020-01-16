@@ -4,12 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 @Entity
 public class Bookmark {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	@ManyToOne
 	private User user;
 	@ManyToOne
