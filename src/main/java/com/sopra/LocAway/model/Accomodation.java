@@ -10,12 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
 @Entity
 public class Accomodation {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private String name;
 	private String number;
 	private String street;

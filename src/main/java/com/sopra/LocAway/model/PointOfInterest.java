@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Version;
 
 @Entity
 public class PointOfInterest {
@@ -19,6 +20,8 @@ public class PointOfInterest {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private String name;
 	private String description;
 	private String number;
@@ -31,6 +34,10 @@ public class PointOfInterest {
 
 	public PointOfInterest() {
 		super();
+	}
+	
+	public void addAccomodation(Accomodation a) {
+		this.accomodations.add(a);
 	}
 
 	public List<Accomodation> getAccomodations() {

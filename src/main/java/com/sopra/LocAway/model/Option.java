@@ -7,12 +7,15 @@ import javax.persistence.GeneratedValue;
 
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Version;
 
 @Entity
 public class Option {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private String name;
 	private Boolean isRule;
 	
@@ -27,6 +30,10 @@ public class Option {
 		super();
 		this.name = name;
 		this.isRule = isRule;
+	}
+	
+	public void addAccomodation(Accomodation a) {
+		this.accomodations.add(a);
 	}
 
 	public Long getId() {

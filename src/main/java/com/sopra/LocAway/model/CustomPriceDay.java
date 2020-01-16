@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
 
 
@@ -21,6 +22,8 @@ public class CustomPriceDay {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private Float basePrice;
 	private Float personPrice;
 	private Date date;

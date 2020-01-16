@@ -6,12 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 @Entity
 public class BookedDay {
 	@Id
 	@GeneratedValue
 	Long id;
+	@Version
+	private int version;
 	private Date date;
 
 	@ManyToOne

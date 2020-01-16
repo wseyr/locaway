@@ -4,16 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 @Entity
 public class Contact {
 	@Id
 	@GeneratedValue
-	Long id;
-	String email;
+	private Long id;
+	@Version
+	private int version;
+	private String email;
 
 	@ManyToOne
-	Booking booking;
+	private Booking booking;
 
 	public Contact() {
 		super();
