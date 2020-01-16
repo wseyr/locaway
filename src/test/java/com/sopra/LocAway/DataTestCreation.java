@@ -1,13 +1,26 @@
 package com.sopra.LocAway;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.sopra.LocAway.model.Accomodation;
 import com.sopra.LocAway.model.EAccomodationType;
+import com.sopra.LocAway.model.Option;
 import com.sopra.LocAway.model.User;
 import com.sopra.LocAway.repository.IAccomodationRepository;
+import com.sopra.LocAway.repository.IBookedDayRepository;
+import com.sopra.LocAway.repository.IBookingRepository;
+import com.sopra.LocAway.repository.IBookmarkRepository;
+import com.sopra.LocAway.repository.IContactRepository;
+import com.sopra.LocAway.repository.ICustomPriceDayRepository;
+import com.sopra.LocAway.repository.IOptionRepository;
+import com.sopra.LocAway.repository.IPhotoRepository;
+import com.sopra.LocAway.repository.IPointOfInterestRepository;
+import com.sopra.LocAway.repository.IReviewRepository;
 import com.sopra.LocAway.repository.IUserRepository;
 
 @SpringBootTest
@@ -17,7 +30,25 @@ class DataTestCreation {
 	private IUserRepository userRepo;
 	@Autowired
 	private IAccomodationRepository accomodationRepo;
-
+	@Autowired
+	private IBookedDayRepository bookedDayRepo;	
+	@Autowired
+	private IBookingRepository bookingRepo;	
+	@Autowired
+	private IBookmarkRepository bookmarkRepo;	
+	@Autowired
+	private IReviewRepository reviewRepo;	
+	@Autowired
+	private IContactRepository contactRepo;	
+	@Autowired
+	private ICustomPriceDayRepository customPriceDayRepo;	
+	@Autowired
+	private IOptionRepository optionRepo;	
+	@Autowired
+	private IPointOfInterestRepository pointOfInterestRepo;	
+	@Autowired
+	private IPhotoRepository photoRepo;	
+	
 	@Test
 	void run() {
 
@@ -104,6 +135,39 @@ class DataTestCreation {
 		a = accomodationRepo.save(a);
 		a1 = accomodationRepo.save(a1);
 		a2 = accomodationRepo.save(a2);
+	
+		Option o0 = new Option();
+		o0.setIsRule(false);
+		o0.setName("cheminée");
+		Option o1 = new Option();
+		o1.setIsRule(false);
+		o1.setName("balcon");
+		Option o2 = new Option();
+		o2.setIsRule(false);
+		o2.setName("jardin");
+		Option o3 = new Option();
+		o3.setIsRule(false);
+		o3.setName("piscine");
+		Option o4 = new Option();
+		o4.setIsRule(false);
+		o4.setName("fibre");
+		Option o5 = new Option();
+		o5.setIsRule(true);
+		o5.setName("no smoking");
+		Option o6 = new Option();
+		o6.setIsRule(true);
+		o6.setName("no animals");
+		Option o7 = new Option();
+		o7.setIsRule(false);
+		o7.setName("amenagement PMR");
+		Option o8 = new Option();
+		o8.setIsRule(false);
+		o8.setName("ascenseur");
+		List<Option> options= new ArrayList<Option>();
+		for (int i = 0; i < 9; i++) {
+			
+		}
 	}
+	
 
 }
