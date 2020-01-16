@@ -30,7 +30,7 @@ public class Accomodation {
 	private String description;
 	private Integer numberOfRooms;
 	private Integer maxPersons;
-	private boolean deleted;
+	private boolean isDeleted;
 	@Enumerated(EnumType.STRING)
 	private EAccomodationType accomodationType;
 	private Float defaultBasePrice;
@@ -160,12 +160,12 @@ public class Accomodation {
 		this.maxPersons = maxPersons;
 	}
 
-	public boolean getDeleted() {
-		return deleted;
+	public boolean isDeleted() {
+		return isDeleted;
 	}
 
-	public void setDeleted(boolean deleted) {
-		this.deleted = deleted;
+	public void setDeleted(boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
 	public EAccomodationType getAccomodationType() {
